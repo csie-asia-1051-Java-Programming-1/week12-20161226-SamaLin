@@ -27,7 +27,7 @@ public class ex01 {
 		}
 		for(int i=0;i<n-1;i++){
 			for(int j=i+1;j<n;j++){
-				if(data[i][0]<data[j][0]){
+				if(data[j][1]<data[i][1]){
 					ram=data[i][0];
 					data[i][0]=data[j][0];
 					data[j][0]=ram;
@@ -37,15 +37,30 @@ public class ex01 {
 				}
 			}
 		}
-		int a=0;
-		int b=0;
+		for(int i=0;i<n;i++){
+			System.out.print(data[i][0]+" ");
+		}
+		System.out.println(" ");
+		
+//		int a=0;
+//		int b=0;
 		for(int i=0;i<n-1;i++){
-			if(data[i][0]==data[i+1][0]){
-				while(i){
-					
+			if(data[i][1]==data[i+1][1]){
+				if(data[i+1][0]<data[i][0]){
+					ram=data[i][0];
+					data[i][0]=data[i+1][0];
+					data[i+1][0]=ram;
+					ram=data[i][1];
+					data[i][1]=data[i+1][1];
+					data[i+1][1]=ram;
 				}
 			}
 		}
+		for(int i=0;i<n;i++){
+			System.out.print(data[i][0]+" ");
+		}
+		System.out.println(" ");
+		
 	}
 
 }
